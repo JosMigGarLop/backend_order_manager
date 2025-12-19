@@ -1,14 +1,24 @@
 # Imagen base
 FROM eclipse-temurin:17-jdk-alpine
 
-# Directorio de la app
+# Directorio de trabajo
 WORKDIR /app
 
-# Copiar el jar generado
+# Instalar Maven (si no usas mvnw)
+RUN apk add --no-cache maven git bash
+
+# Copiar pom.xml y fuentes
+COPY pom.xml .
+COPY src ./src
+
+# Construir el JAR
+RUN mvn clean package -DskipTests
+
+# Copiar el JAR generado
 COPY target/order-management-0.0.1-SNAPSHOT.jar app.jar
 
-# Puerto expuesto
+# Exponer puerto
 EXPOSE 8081
 
-# Comando para ejecutar
+# Ejecutar
 ENTRYPOINT ["java","-jar","app.jar"]
