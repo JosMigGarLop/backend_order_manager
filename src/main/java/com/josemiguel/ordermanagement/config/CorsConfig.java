@@ -6,6 +6,8 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
 
+import java.util.List;
+
 @Configuration
 public class CorsConfig {
 
@@ -13,24 +15,29 @@ public class CorsConfig {
     public CorsFilter corsFilter() {
         CorsConfiguration config = new CorsConfiguration();
 
-        // Permitir Angular en localhost:4200
-        config.addAllowedOrigin("http://localhost:4200");
+        // Orígenes permitidos (local + producción)
+        config.setAllowedOrigins(List.of(
+                "http://localhost:4200",
+                "https://frontendordermanager.vercel.app"
+        ));
 
         // Métodos HTTP permitidos
-        config.addAllowedMethod("GET");
-        config.addAllowedMethod("POST");
-        config.addAllowedMethod("PUT");
-        config.addAllowedMethod("PATCH");
-        config.addAllowedMethod("DELETE");
-        config.addAllowedMethod("OPTIONS");
+        config.setAllowedMethods(List.of(
+                "GET",
+                "POST",
+                "PUT",
+                "PATCH",
+                "DELETE",
+                "OPTIONS"
+        ));
 
         // Cabeceras permitidas
-        config.addAllowedHeader("*");
+        config.setAllowedHeaders(List.of("*"));
 
-        // Permitir credenciales (si las necesitas)
+        // Permitir credenciales
         config.setAllowCredentials(true);
 
-        // Tiempo máximo de caché
+        // Cache preflight
         config.setMaxAge(3600L);
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
