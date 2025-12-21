@@ -1,4 +1,4 @@
-# Order Manager - Backend
+# 📂 Order Manager - Backend
 
 **Order Manager** es un sistema para la gestión de pedidos de productos físicos. Permite crear, editar, listar y gestionar pedidos de forma sencilla mediante una API REST, pensada para ser consumida por un frontend.
 
@@ -6,7 +6,7 @@ Es un proyecto realizado como **prueba técnica de José Miguel García López**
 
 ---
 
-## Stack Tecnológico
+# 🛠️ Stack Tecnológico
 
 - **Java 17 & Spring Boot:** Desarrollo del backend y creación de APIs REST robustas.
 - **Spring Web:** Manejo de controladores y rutas REST.
@@ -21,7 +21,7 @@ Es un proyecto realizado como **prueba técnica de José Miguel García López**
 
 ---
 
-## Instalación y ejecución
+# ▶️ Instalación y ejecución
 
 ### Clonar el repositorio
 
