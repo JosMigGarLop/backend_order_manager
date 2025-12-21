@@ -1,6 +1,6 @@
-# 📂 Order Manager - Backend
+# 📂 OrderPro - Backend
 
-**Order Manager** es un sistema para la gestión de pedidos de productos físicos. Permite crear, editar, listar y gestionar pedidos de forma sencilla mediante una API REST, pensada para ser consumida por un frontend.
+**OrderPro** es un sistema para la gestión de pedidos de productos físicos. Permite crear, editar, listar y gestionar pedidos de forma sencilla mediante una API REST, pensada para ser consumida por un frontend.
 
 Es un proyecto realizado como **prueba técnica de José Miguel García López**.
 
